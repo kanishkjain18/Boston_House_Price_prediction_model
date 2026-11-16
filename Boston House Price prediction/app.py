@@ -1,10 +1,12 @@
-
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import joblib
 
 # Load trained model
-model = joblib.load("Random_Forest.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+
+model = joblib.load(BASE_DIR / "Random_Forest.pkl")
 
 # Page configuration
 st.set_page_config(
